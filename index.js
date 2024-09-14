@@ -1,7 +1,11 @@
 const TelegramBot = require('node-telegram-bot-api');
+ const express = require("express");
+ const app=express()
+ const port = process.env.PORT || 3000;
 
+ // Your bot code here
 // Replace with your Telegram bot token
-const token = '6320118851:AAF0S7uwLZbW4MJLD8rki0snQOxWSMP8_fw';
+const token = '7104317621:AAEVxq5-6pKKIDEPegvg_wAFxyE-Ew4IMB4';
 
 // Create a bot using polling to fetch new updates
 const bot = new TelegramBot(token, { polling: true });
@@ -72,3 +76,4 @@ bot.on('message', (msg) => {
     bot.sendMessage(chatId, `I'm not sure how to respond to that. Type /help for available commands.`);
   }
 });
+app.listen(port,()=>{console.log('connected')})
